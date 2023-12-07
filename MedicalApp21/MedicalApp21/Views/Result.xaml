@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MedicalApp21.Result"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="false"
+             ControlTemplate="{StaticResource TopCurve}">
+
+    <StackLayout HeightRequest="650">
+        <!--select label-->
+        <StackLayout Orientation="Horizontal" >
+            <Label Style="{x:StaticResource instructionText}" Text="Your result is"  />
+            <Label  Style="{Binding ResultLblStyle}" Text="{Binding Result}"/>
+        </StackLayout>
+        <BoxView Style="{x:StaticResource seperatorGridRow}" HeightRequest="2"/>
+
+        <ScrollView>
+            <StackLayout>
+
+                <Label Style="{x:StaticResource subTitle}" FontSize="18" FontAttributes="None" Text="{Binding Description}"/>
+            </StackLayout>
+        </ScrollView>
+
+        <Button Style="{StaticResource bottomBtn}" Command="{Binding saveResultBtnCommand}" Text="Save"></Button>
+    </StackLayout>
+
+</ContentPage>

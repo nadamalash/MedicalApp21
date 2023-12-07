@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedicalApp21.Views.GridViews.Patients_Grid">
+  <ContentView.Content>
+        <StackLayout Padding="10" Spacing="0">
+            
+            <!--grid header-->
+            <Frame Style="{StaticResource GridHeader}">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{x:StaticResource lblGridHeader}" Text="Name" Margin="2,0,0,0"  Grid.Column="0"/>
+                </Grid>
+            </Frame>
+
+            <!--patients gridView-->
+            <CollectionView  x:Name="MyList" ItemsSource="{Binding AllPatients}" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        
+                            
+                        <!--for each row-->
+                        <StackLayout>
+                        <Frame  Padding="0"  HasShadow="False" BackgroundColor="White"  CornerRadius="20" >
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <StackLayout Grid.Column="0" Padding="10,0">
+                                        <Label Style="{x:StaticResource lblGridRow}" Text="{Binding Name}" Margin="0,10" />
+                                    </StackLayout>
+                                    
+                                                                        
+
+
+                                    <!--delete & show profile & add image icons-->
+                                    <StackLayout Orientation="Horizontal" Grid.Column="1" Padding="10,0">
+                                        <ImageButton Style="{StaticResource iconGridRow}" Command="{Binding  Path=BindingContext.showProfileCommand,  Source={x:Reference Name=MyList}}" CommandParameter="{Binding ID}" Source="ic_action_account_box.png"  HorizontalOptions="EndAndExpand" />
+                                        <ImageButton Style="{StaticResource iconGridRow}" Command="{Binding  Path=BindingContext.showAddImgCommand, Source={x:Reference Name=MyList}}" CommandParameter="{Binding ID}" Source="ic_action_add_photo_alternate.png"  HorizontalOptions="End" HeightRequest="35" WidthRequest="27" />
+                                        <ImageButton Style="{StaticResource iconGridRow}" Command="{Binding  Path=BindingContext.showDelConfirmCommand, Source={x:Reference Name=MyList}}" CommandParameter="{Binding ID}" Source="ic_action_delete.png"  HorizontalOptions="End" />
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+
+                            
+                            <!--seperator line-->
+                            <BoxView Style="{StaticResource seperatorGridRow}"/>
+                        </StackLayout>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            
+            
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>

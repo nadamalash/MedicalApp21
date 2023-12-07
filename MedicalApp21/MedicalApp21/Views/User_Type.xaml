@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedicalApp21.Views.User_Type"
+              NavigationPage.HasNavigationBar="false"
+             ControlTemplate="{StaticResource TopCurve}">
+    <ContentPage.Content>
+        <StackLayout HeightRequest="500" >
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                
+                <!--instruction lbl-->
+                <Label Style="{x:StaticResource instructionText}" Text="Please, tell us which type you are ?"  />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,30,0,40">
+
+                    <!--patient btn-->
+                    <StackLayout Margin="0,0,20,0">
+                        <ImageButton Style="{Binding PatientTypeStyle}"  Source="user.png" Command="{Binding SelectedTypeCommand}" CommandParameter="patient" ></ImageButton>
+                        <Label Style="{x:StaticResource headline}" Text="Patient" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                <Label Style="{x:StaticResource instructionText}" Text="Or" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                    <!--dr btn-->
+                    <StackLayout Margin="20,0,0,0">
+                        <ImageButton Style="{Binding DrTypeStyle}" Source="stethoscope.png" Command="{Binding SelectedTypeCommand}" CommandParameter="dr"  ></ImageButton>
+                        <Label Style="{x:StaticResource headline}" Text="Doctor" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                
+            </StackLayout>
+
+             <!--next btn-->
+                <Button Style="{x:StaticResource bottomBtn}" Text="Next" IsVisible="{Binding NextIsVisible}" Command="{Binding NextCommand}"  FontSize="25" HeightRequest="60" WidthRequest="300"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MedicalApp21.Splash"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Content>
+        <StackLayout Padding="0" Spacing="0">
+            <Grid Padding="0" RowSpacing="0" BackgroundColor="White"
+                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                
+                <!--16 row-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!--10 columns-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--white part-->
+                <Frame Style="{StaticResource HeaderFrameW}" BackgroundColor="{StaticResource BlueHeader}" 
+                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="8" Grid.ColumnSpan="10">
+                    <Frame Style="{StaticResource HeaderFrameB}"  BackgroundColor="White" 
+                           Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="10">
+                    </Frame>
+                </Frame>
+
+                <!--blue part-->
+                <Frame Style="{StaticResource BodyFrameB}" BackgroundColor="White" 
+                     Grid.Row="8" Grid.Column="0" Grid.RowSpan="8" Grid.ColumnSpan="10">
+                    <Frame Style="{StaticResource BodyFrameW}" BackgroundColor="{StaticResource BlueHeader}"
+                           Grid.Row="1" Grid.Column="0" Grid.RowSpan="14" Grid.ColumnSpan="10">
+                    </Frame>
+                </Frame>
+            
+                <!--image-->
+                <Frame   BackgroundColor="White" Grid.Row="0" Grid.Column="1" 
+                           Grid.RowSpan="7" Grid.ColumnSpan="8" Margin="-10,0,-10,-30">
+                    <Image Source="{Binding ImgSource}" ></Image>
+                </Frame>
+
+                <!--name project label-->
+                <Frame  Grid.Row="11" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="7"
+                        Margin="0,-70,0,0" BackgroundColor="{StaticResource BlueHeader}" >
+                    <Label Text="Chest CT Scan Interpretation" FontSize="30" TextColor="White" FontAttributes="Bold" BackgroundColor="{StaticResource BlueHeader}"/>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+        

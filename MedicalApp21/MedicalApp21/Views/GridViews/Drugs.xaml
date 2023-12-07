@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedicalApp21.Views.GridViews.Drugs">
+  <ContentView.Content>
+      
+        <Frame BorderColor="{StaticResource BlueHeader}" >
+            <StackLayout>
+                <!--patients gridView-->
+                <CollectionView  x:Name="MyList" ItemsSource="{Binding AllDrugs}" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+
+                            <!--for each row-->
+                            <Label Style="{x:StaticResource lblGridRow}" FontSize="17" Text="{Binding Name}"/>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

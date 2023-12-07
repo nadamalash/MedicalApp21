@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MedicalApp21.App">
+    <Application.Resources>
+        
+        <!--Colors-->
+        
+        <Color x:Key="BlueHeader">#151c38</Color>
+        <Color x:Key="DarkGrayText">#595858</Color>
+        <Color x:Key="LightGrayText">#767676</Color>
+        <Color x:Key="LineBoxV">#A3A1A1</Color>
+        <Color x:Key="GrayPlaceholder">#969696</Color>
+        <Color x:Key="GridHeaderColor">#5a6078</Color>
+        <Color x:Key="MustardColor">#E48727</Color>
+        <Color x:Key="TypeSelected">#e0e0e2</Color>
+        <Color x:Key="ActivityIndicatorColor">#bdbdbd</Color>
+
+        
+
+        <!--Styles-->
+        
+        <!--******************************Styles for page*******************************************-->
+        
+        <!--header-->
+        
+        <Style x:Key="HeaderFrameB" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{x:StaticResource BlueHeader}"></Setter>
+            <Setter Property="CornerRadius" Value="70"></Setter>
+            <Setter Property="Margin" Value="-100,-100,0,0"></Setter>
+            <Setter Property="Padding" Value="105,105,5,5"></Setter>
+        </Style>
+
+        <Style x:Key="HeaderFrameW" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="White"></Setter>
+            <Setter Property="Padding" Value="0"></Setter>
+        </Style>
+
+
+        <!--body-->
+        
+        
+        <Style x:Key="BodyFrameB" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{x:StaticResource BlueHeader}"></Setter>
+            <Setter Property="Padding" Value="0"></Setter>
+        </Style>
+
+        <Style x:Key="BodyFrameW" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="White"></Setter>
+            <Setter Property="CornerRadius" Value="70"></Setter>
+            <Setter Property="Margin" Value="0,0,-150,-150"></Setter>
+            <Setter Property="Padding" Value="5,5,150,150"></Setter>
+        </Style>
+        
+        
+       <!--Headlines-->
+  
+        <Style x:Key="headline" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="TextColor" Value="{x:StaticResource BlueHeader}"></Setter>
+        </Style>
+
+       <!--Button-bottom-->
+        
+        <Style x:Key="bottomBtn" TargetType="Button">
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="HorizontalOptions" Value="EndAndExpand"></Setter>
+            <Setter Property="VerticalOptions" Value="EndAndExpand"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="BackgroundColor" Value="{x:StaticResource MustardColor}"></Setter>
+            <Setter Property="HeightRequest" Value="45"></Setter>
+            <Setter Property="WidthRequest" Value="140"></Setter>
+            <Setter Property="CornerRadius" Value="5"></Setter>
+        </Style>
+
+        
+        <!--SubTitle-->
+        
+        <Style x:Key="subTitle" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+            <Setter Property="VerticalOptions" Value="Start"></Setter>
+            <Setter Property="FontSize" Value="19"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="TextColor" Value="{StaticResource DarkGrayText}"></Setter>
+        </Style>
+
+        <!--label-drugs-->
+        <Style x:Key="labelDrugs" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="TextColor" Value="{StaticResource BlueHeader}"></Setter>
+        </Style>
+
+        <!--entryAddP-->
+        <Style x:Key="entryAddP" TargetType="Entry">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="TextColor" Value="Black"></Setter>
+        </Style>
+
+        <!--ImageButton_AddP-->
+        <Style x:Key="imageButtonAddP" TargetType="ImageButton">
+            <Setter Property="HeightRequest" Value="40"></Setter>
+            <Setter Property="WidthRequest" Value="40"></Setter>
+            <Setter Property="Padding" Value="5"></Setter>
+            <Setter Property= "CornerRadius" Value="70"></Setter>
+            <Setter Property="BackgroundColor" Value="{StaticResource BlueHeader}"></Setter>
+            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+        </Style>
+
+        <!--frameImage-->
+        <Style x:Key="frameImageTitle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="White"></Setter>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="BorderColor" Value="{StaticResource BlueHeader}"></Setter>
+            <Setter Property="CornerRadius" Value="180"></Setter>
+            <Setter Property="WidthRequest" Value="70"></Setter>
+            <Setter Property="HeightRequest" Value="70"></Setter>
+        </Style>
+
+
+        <!--instructionText-->
+        <Style x:Key="instructionText" TargetType="Label">
+            <Setter Property="FontSize" Value="19"></Setter>
+            <Setter Property="TextColor" Value="{StaticResource DarkGrayText}"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+
+        </Style>
+        
+       
+        <!--TypeImgBtn-->
+        <Style x:Key="TypeImgBtn" TargetType="ImageButton">
+            <Setter Property="HeightRequest" Value="110"></Setter>
+            <Setter Property="WidthRequest" Value="110"></Setter>
+            <Setter Property="Padding" Value="20"></Setter>
+            <Setter Property= "CornerRadius" Value="180"></Setter>
+            <Setter Property="BackgroundColor" Value="White"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="BorderColor" Value="{x:StaticResource BlueHeader}"></Setter>
+            <Setter Property="BorderWidth" Value="1"></Setter>
+
+        </Style>
+
+        <!--TypeImgBtnSelected-->
+        <Style x:Key="TypeImgBtnSelected" TargetType="ImageButton">
+            <Setter Property="HeightRequest" Value="110"></Setter>
+            <Setter Property="WidthRequest" Value="110"></Setter>
+            <Setter Property="Padding" Value="20"></Setter>
+            <Setter Property= "CornerRadius" Value="180"></Setter>
+            <Setter Property="BackgroundColor" Value="{x:StaticResource TypeSelected}"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="BorderColor" Value="{x:StaticResource BlueHeader}"></Setter>
+            <Setter Property="BorderWidth" Value="1"></Setter>
+
+        </Style>
+
+        <!--UploadImgBtn-->
+        <Style x:Key="UploadImgBtn" TargetType="ImageButton">
+            <Setter Property="HeightRequest" Value="60"></Setter>
+            <Setter Property="WidthRequest" Value="100"></Setter>
+            <Setter Property= "CornerRadius" Value="50"></Setter>
+            <Setter Property="BackgroundColor" Value="White"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+        </Style>
+
+        <!--PositiveLbl-->
+        <Style x:Key="PositiveLbl" TargetType="Label">
+            <Setter Property="FontSize" Value="19"></Setter>
+            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="TextColor" Value="DarkRed"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+        </Style>
+        
+        <!--NegativeLbl-->
+        <Style x:Key="NegativeLbl" TargetType="Label">
+            <Setter Property="FontSize" Value="19"></Setter>
+            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="TextColor" Value="DarkGreen"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+        </Style>
+        
+        <!--UnKnownLbl-->
+        <Style x:Key="UnKnownLbl" TargetType="Label">
+            <Setter Property="FontSize" Value="19"></Setter>
+            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="TextColor" Value="{x:StaticResource MustardColor}"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+        </Style>
+        <!--******************************Styles for Popup*******************************************-->
+        
+        <!--buttonPopUp-->
+        <Style x:Key="buttonPopUp" TargetType="Button">
+            <Setter Property="FontAttributes" Value="Bold" ></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="HeightRequest" Value="45"></Setter>
+            <Setter Property="WidthRequest" Value="70"></Setter>
+            <Setter Property="BorderWidth" Value="1"></Setter>
+            <Setter Property="BorderColor" Value="{StaticResource BlueHeader}"></Setter>
+            <Setter Property="BackgroundColor" Value="{StaticResource BlueHeader}"></Setter>
+            <Setter Property="CornerRadius" Value="5"></Setter>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
+        </Style>
+
+        <!--labelTextPopUps-->
+        <Style x:Key="labelTextPopUps" TargetType="Label" >
+            <Setter Property="TextColor" Value="{StaticResource DarkGrayText}"></Setter>
+            <Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+
+        <!--framePopUp-->
+        <Style x:Key="framePopUp" TargetType="Frame" >
+            <Setter Property="BackgroundColor" Value="White"></Setter>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="Margin" Value="30,0"></Setter>
+            <Setter Property="CornerRadius" Value="20"></Setter>
+            <Setter Property="WidthRequest" Value="300"></Setter>
+            <Setter Property="HeightRequest" Value="170"></Setter>
+        </Style>
+
+        <!--titlePopUp-->
+        <Style x:Key="titlePopUp" TargetType="Label" >
+            <Setter Property="TextColor" Value="{StaticResource BlueHeader}"></Setter>
+            <Setter Property="VerticalOptions" Value="Start"></Setter>
+            <Setter Property="FontSize" Value="17"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="0,3,0,0"></Setter>
+        </Style>
+
+        <!--ImageButtonPopUp-->
+        <Style x:Key="imageButtonAddPopUp" TargetType="ImageButton">
+            <Setter Property="HeightRequest" Value="30"></Setter>
+            <Setter Property="WidthRequest" Value="30"></Setter>
+            <Setter Property="Padding" Value="5"></Setter>
+            <Setter Property= "CornerRadius" Value="70"></Setter>
+            <Setter Property="BackgroundColor" Value="{StaticResource BlueHeader}"></Setter>
+            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+        </Style>
+
+        <!--******************************Styles for GridView*******************************************-->
+        
+        
+        <Style x:Key="GridHeader" TargetType="Frame">
+            <Setter Property="HasShadow" Value="False"></Setter>
+            <Setter Property="BackgroundColor" Value="{x:StaticResource GridHeaderColor}"></Setter>
+            <Setter Property="CornerRadius" Value="5"></Setter>
+            <Setter Property="HeightRequest" Value="60"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+        </Style>
+
+        <Style x:Key="lblGridHeader" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="19"></Setter>
+            <Setter Property="HorizontalOptions" Value="StartAndExpand"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
+        </Style>
+
+        <Style x:Key="lblGridRow" TargetType="Label">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="HorizontalOptions" Value="StartAndExpand"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="TextColor" Value="{x:StaticResource LightGrayText}"></Setter>
+        </Style>
+
+        <Style x:Key="iconGridRow" TargetType="ImageButton">
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="BackgroundColor" Value="White"></Setter>
+            <Setter Property="WidthRequest" Value="25"></Setter>
+            <Setter Property="HeightRequest" Value="30"></Setter>
+        </Style>
+
+        <Style x:Key="seperatorGridRow" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="{x:StaticResource GridHeaderColor}"></Setter>
+            <Setter Property="Opacity" Value="0.5"></Setter>
+            <Setter Property="Margin" Value="5,0"></Setter>
+            <Setter Property="HeightRequest" Value="1"></Setter>
+        </Style>
+
+     <!--*********************************************************************************************************-->
+        
+        
+        <!--Templates for Pages-->
+        <ControlTemplate x:Key="TopCurve">
+            <Grid Padding="0" RowSpacing="0" BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                <!--16 row-->
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <!--10 columns-->
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+                <!--header-->
+                <Frame Style="{StaticResource HeaderFrameW}" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="10" >
+                    <Frame Style="{StaticResource HeaderFrameB}" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="10" >
+                        
+                        <!--header content-->   
+                        <StackLayout Margin="25,0,50,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                            <Button Command="{TemplateBinding BindingContext.BackBtnCommand}" IsVisible="{TemplateBinding BindingContext.Has_Back}" ImageSource="ic_action_arrow_back_ios.png" ContentLayout="Left" BackgroundColor="{StaticResource BlueHeader}" Text="Back"  TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" ></Button>
+                            <Label Text="{TemplateBinding BindingContext.Page_Title}" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" ></Label>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+                
+                
+                <!--body-->
+                <Frame Style="{StaticResource BodyFrameB}" Grid.Row="2" Grid.RowSpan="14" Grid.Column="0" Grid.ColumnSpan="10" >
+                    <Frame Style="{StaticResource BodyFrameW}"  Grid.Row="2" Grid.RowSpan="14" Grid.Column="0" Grid.ColumnSpan="10" >
+                        
+                        <!--body content-->
+                        <StackLayout  Margin="35" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <ContentPresenter />
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+            </Grid>
+        </ControlTemplate>
+
+
+        <!--Templates for PopUps-->
+        <ControlTemplate x:Key="PopUps">
+
+            <Frame Style="{StaticResource framePopUp}" >
+                <!--content-->
+                <StackLayout Margin="10">
+                    <!--title-->
+                    <Label Style="{StaticResource titlePopUp}" Text="{TemplateBinding BindingContext.Page_Title}"/>
+
+                    <ContentPresenter />
+
+                </StackLayout>
+            </Frame>
+        </ControlTemplate>
+        
+    </Application.Resources>
+</Application>

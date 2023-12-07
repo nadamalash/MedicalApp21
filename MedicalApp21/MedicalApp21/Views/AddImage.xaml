@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedicalApp21.Views.AddImage"
+              NavigationPage.HasNavigationBar="false"
+             ControlTemplate="{StaticResource TopCurve}">
+    <ContentPage.Content>
+        <StackLayout HeightRequest="650">
+
+            <!--select label-->
+            <Label Style="{x:StaticResource instructionText}" Text="Choose an x-ray image to be scanned"  />
+
+
+            <!--camera & gallery imgButton -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,30,0,10">
+                
+                <StackLayout Margin="0,0,20,0">
+                    <ImageButton Style="{x:StaticResource TypeImgBtn}" Command="{Binding btnCameraCommand}"  Source="camera_1.png" Padding="22,15,22,22"></ImageButton>
+                    <Label Style="{x:StaticResource  headline}" Text="Camera" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  />
+
+                </StackLayout>
+                
+                <Label Style="{x:StaticResource instructionText}" Text="Or" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                <StackLayout Margin="20,0,0,0" >
+                    <ImageButton Style="{x:StaticResource TypeImgBtn}"  Command="{Binding btnGalleryCommand}"   Source="image.png" Padding="20,23,21,20" ></ImageButton>
+                    <Label Style="{x:StaticResource  headline}" Text="Gallery" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  />
+
+                </StackLayout>
+            </StackLayout>
+
+
+            <!--image-->
+            <ScrollView>
+                <Frame Margin="0,0,0,20" BorderColor="{x:StaticResource TypeSelected}" Padding="0" WidthRequest="300" HeightRequest="300">
+                    <Image Aspect="AspectFit" Source="{Binding ImgSource}"  />
+                </Frame>
+            </ScrollView>
+
+
+            <Button Style="{StaticResource bottomBtn}" Text="Process" Command="{Binding processCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

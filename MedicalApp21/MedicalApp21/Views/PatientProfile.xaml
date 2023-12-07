@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedicalApp21.Views.PatientProfile"
+              NavigationPage.HasNavigationBar="false"
+ControlTemplate="{StaticResource TopCurve}">
+    <ContentPage.Content >
+        <StackLayout HeightRequest="650">
+            
+            <ScrollView>
+                <StackLayout>
+                <!--image-->
+            <Frame Style="{StaticResource frameImageTitle}">
+                <Image Source="user.png" ></Image>
+            </Frame>
+
+            <Label Style="{x:StaticResource subTitle}" Text="Name" />
+                    <Entry Style="{x:StaticResource entryAddP}" IsReadOnly="True" Text="{Binding Name}"/>
+            <Label Style="{x:StaticResource subTitle}" Text="Age" />
+                    <Entry Style="{x:StaticResource entryAddP}" IsReadOnly="True" Text="{Binding Age}"/>
+            <Label Style="{x:StaticResource subTitle}" Text="Phone" />
+                    <Entry Style="{x:StaticResource entryAddP}" IsReadOnly="True" Text="{Binding Phone}"/>
+            <Label Style="{x:StaticResource subTitle}" Text="Address" />
+                    <Entry Style="{x:StaticResource entryAddP}" IsReadOnly="True" Text="{Binding Address}"/>
+            <Label Style="{x:StaticResource subTitle}" Text="Gander" />
+            <StackLayout  VerticalOptions="EndAndExpand" Orientation="Horizontal" Margin="0,20,0,0">
+                <Label Style="{x:StaticResource subTitle}" Text="Male" />
+                        <RadioButton IsChecked="{Binding MaleIsChecked}" IsEnabled="False" ></RadioButton>
+                <Label Style="{x:StaticResource subTitle}" Text="Female" />
+                        <RadioButton IsChecked="{Binding FemaleIsChecked}" IsEnabled="False"></RadioButton>
+
+            </StackLayout>
+
+            <StackLayout  VerticalOptions="EndAndExpand" Orientation="Horizontal" Margin="0,20,0,0">
+                        <ImageButton Style="{x:StaticResource imageButtonAddP}" Command="{Binding viewDrugsBtnCommand}"  Source="ic_action_calendar_view_day.png"/>
+                <Label Style="{StaticResource labelDrugs}" Text="View Drugs"/>
+            </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <Button Style="{StaticResource bottomBtn}" Text="Diagnoses" Command="{Binding showDiagnosesBtnCommand}"></Button>
+        </StackLayout>
+     
+    </ContentPage.Content>
+</ContentPage>
