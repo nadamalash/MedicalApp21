@@ -43,10 +43,10 @@ The system follows a serverless architecture on Amazon Web Services (AWS), one o
 **Description:**
 Cross-platform mobile app designed for patients to scan their own CT-Scan images and securely upload them to the cloud.
 
-### ML Model
+### DL Model
 
 **Description:**
-Machine learning model for classification based on the uploaded images. It detects evidence of COVID-19 suspects using a trained model.
+Deep learning model for classification based on the uploaded images. It detects evidence of COVID-19 suspects using a trained model.
 
 ### CI/CD Pipeline
 
